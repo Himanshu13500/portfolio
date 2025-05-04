@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey - Himanshu Ukey</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/journey.css">
+</head>
+<body>
+    <section class="journey-page">
+        <div class="content-container">
+            <div class="glass-card">
+                <h2 class="section-title">🧠 Who I Am</h2>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🎓</div>
+                    <div class="bullet-text">MCA Graduate with a sharp analytical mind and a digital-first mindset, blending code, creativity, and commerce into strategic digital solutions.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🧰</div>
+                    <div class="bullet-text">Hands-on experience with top tools: Google Analytics, Meta Business Suite, Amazon Seller Central, SEO tools (like SEMrush, Ahrefs), and Programmatic Ad Platforms (like Google DV360, The Trade Desk, and Amazon DSP).</div>
+                </div>
+
+                <h2 class="section-title">🚀 What I Do</h2>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🌍</div>
+                    <div class="bullet-text">Decode geo-market trends and consumer behavior to build campaigns that are hyper-targeted and regionally relevant.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon">📈</div>
+                    <div class="bullet-text">Design performance-focused marketing funnels that drive measurable results through clear journey mapping and conversion tracking.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🔎</div>
+                    <div class="bullet-text">Leverage SEO, PPC, and programmatic ads to amplify visibility — using real-time bidding (RTB) and audience segmentation for precision reach.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🧠</div>
+                    <div class="bullet-text">Automate and optimize ad campaigns using programmatic tools — reducing costs, increasing efficiency, and improving ROI with data-driven bidding strategies.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🎯</div>
+                    <div class="bullet-text">Craft marketing that feels human and performs like a machine — personalized, emotionally intelligent, and scalable.</div>
+                </div>
+
+                <h2 class="section-title">🔮 What's Next</h2>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🎮</div>
+                    <div class="bullet-text">Explore eSports and Gen Z ecosystems to craft culturally resonant brand stories and gamified digital strategies.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🤖</div>
+                    <div class="bullet-text">Build AI-powered adaptive funnels — campaigns that evolve in real-time based on user behavior and predictive analytics.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🌐</div>
+                    <div class="bullet-text">Champion ethical and global digital growth — using programmatic and performance marketing to help brands scale across borders, responsibly.</div>
+                </div>
+                <div class="bullet-point">
+                    <div class="bullet-icon">🛠️</div>
+                    <div class="bullet-text">Deepen expertise in tools like Google DV360, Adobe Ad Cloud, and Amazon DSP to master full-funnel automation in the ad tech space.</div>
+                </div>
+
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Portfolio</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initial animation for the glass card
+        gsap.from('.glass-card', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out',
+            onComplete: () => {
+                // Ensure the card stays visible after animation
+                gsap.set('.glass-card', { opacity: 1 });
+            }
+        });
+
+        // Staggered animation for bullet points
+        gsap.from('.bullet-point', {
+            opacity: 0,
+            x: -50,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power3.out',
+            onComplete: () => {
+                // Ensure bullet points stay visible after animation
+                gsap.set('.bullet-point', { opacity: 1 });
+            }
+        });
+
+        // Ensure content stays visible on scroll
+        ScrollTrigger.create({
+            trigger: '.glass-card',
+            start: 'top center',
+            onEnter: () => {
+                gsap.set('.glass-card', { opacity: 1 });
+                gsap.set('.bullet-point', { opacity: 1 });
+            },
+            onLeaveBack: () => {
+                gsap.set('.glass-card', { opacity: 1 });
+                gsap.set('.bullet-point', { opacity: 1 });
+            }
+        });
+    </script>
+</body>
+</html> 
